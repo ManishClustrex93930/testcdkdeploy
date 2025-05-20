@@ -23,10 +23,8 @@ cd cdk-app
 pip install -r requirements.txt
 
 # Bootstrap the environment
-cdk bootstrap \
-  --toolkit-stack-name CDKToolkit \
-  --cloudformation-execution-policies arn:aws:iam::aws:policy/AdministratorAccess \
-  --bootstrap-role-arn arn:aws:iam::851725206270:role/cdk-hnb659fds-deploy-role-851725206270-us-east-2
+cdk bootstrap aws://851725206270/us-east-2 --cloudformation-execution-policies arn:aws:iam::aws:policy/AdministratorAccess --force --toolkit-stack-name CDKToolkit
+
 
 # Synthesize CloudFormation templates
 cdk synth
