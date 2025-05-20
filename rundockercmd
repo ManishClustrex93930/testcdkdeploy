@@ -5,3 +5,5 @@ docker run \
   -e AWS_SECRET_ACCESS_KEY=your-secret-key \
   -e AWS_DEFAULT_REGION=us-east-1 \
   cdk-python-deployer
+
+  docker run --env-file .env cdk-python-deployer

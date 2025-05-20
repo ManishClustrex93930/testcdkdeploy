@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 set -e
 
 # Get the GitHub PAT from environment variable
@@ -21,7 +21,7 @@ cd cdk-app
 # Install Python dependencies
 pip install -r requirements.txt
 
-# Bootstrap if needed (optional)
+# Bootstrap if needed
 cdk bootstrap || true
 
 # Deploy with CDK
