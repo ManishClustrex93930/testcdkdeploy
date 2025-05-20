@@ -23,7 +23,9 @@ cd cdk-app
 pip install -r requirements.txt
 
 # Bootstrap the environment
-cdk bootstrap aws://851725206270/us-east-2
+cdk bootstrap aws://851725206270/us-east-2 \
+  --cloudformation-execution-policies arn:aws:iam::aws:policy/AdministratorAccess
+
 
 # Synthesize CloudFormation templates
 cdk synth
