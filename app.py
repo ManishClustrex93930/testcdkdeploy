@@ -4,3 +4,4 @@ from lambda_stack import LambdaStack
 
 app = cdk.App()
 LambdaStack(app, "TestLambdaStack")
+app.synth()

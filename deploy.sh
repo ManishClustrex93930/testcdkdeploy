@@ -10,19 +10,23 @@ if [ -z "$GITHUB_PAT" ]; then
   exit 1
 fi
 
-# Configure variables
 REPO_URL="https://${GITHUB_PAT}@github.com/ManishClustrex93930/testcdkdeploy.git"
 BRANCH="main"
+
+# Remove old clone if exists
+rm -rf cdk-app
 
 # Clone the repo and switch to it
 git clone --branch "$BRANCH" "$REPO_URL" cdk-app
 cd cdk-app
 
-# Install Python dependencies
 pip install -r requirements.txt
 
-# Bootstrap if needed
+# Bootstrap (optional, skips if already done)
 cdk bootstrap || true
 
-# Deploy with CDK
+# Synthesize CloudFormation templates
+cdk synth
+
+# Deploy the stack without approval prompts
 cdk deploy --require-approval never
