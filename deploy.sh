@@ -22,8 +22,8 @@ cd cdk-app
 
 pip install -r requirements.txt
 
-# Bootstrap (optional, skips if already done)
-cdk bootstrap || true
+# Bootstrap the environment
+cdk bootstrap aws://851725206270/us-east-2
 
 # Synthesize CloudFormation templates
 cdk synth
